@@ -1,13 +1,21 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Pokemon from "./components/Pokemon/Pokemon";
+import React, {useState} from "react";
+import PokemonList from "./components/PokemonList";
 
-function App() {
+const App = () => {
+
+  const [search, setSearch] = useState("")
+
+  const handleChange = (e) => {
+    setSearch(e.target.value)
+  }
+
   return (
-    <div className="App">
-      <Pokemon />
+    <div>
+      <input onChange={handleChange} />
+
+      <PokemonList searchTerm={search} />
     </div>
   );
-}
+};
 
 export default App;
