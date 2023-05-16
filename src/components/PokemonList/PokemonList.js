@@ -6,9 +6,7 @@ function PokemonList({ searchTerm = "" }) {
   return (
     <ul>
     <li>test</li>
-    {/*   {pokemons.map((pokemon) => (
-        <li key={pokemon.name}>{pokemon.name}</li>
-       ))} */}
+    <li>test2</li>
     </ul>
   );
 }
