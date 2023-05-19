@@ -20,18 +20,20 @@ function PokemonList({ searchTerm = "" }) {
 
   return (
     <>
-    <Outlet/>
-      <Pagination
+      <Outlet />
+      {/* <Pagination
         list={pokemonList.filter((pokemon) =>
           pokemon.name.includes(searchTerm)
         )}
         setList={setPaginatedList}
         // resultsPerPage={2}
-      />
+      /> */}
       <ul>
-        {paginatedList.map((pokemon) => (
-        <Pokemon pokemon={pokemon} key={pokemon.name} />
-        ))}
+        {pokemonList
+          .filter((pokemon) => pokemon.name.includes(searchTerm))
+          .map((pokemon, index) => (
+            <Pokemon index={index} pokemon={pokemon} key={pokemon.name} />
+          ))}
       </ul>
     </>
   );

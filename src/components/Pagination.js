@@ -6,7 +6,7 @@ function Pagination({list, setList, resultsPerPage = 10}) {
 
   useEffect(() => {
     setList(list.slice(page * resultsPerPage, page * resultsPerPage + resultsPerPage))
-  }, [page, resultsPerPage, list , setList])
+  }, [page, resultsPerPage, setList])
   
 
   function handleNextPage() {
