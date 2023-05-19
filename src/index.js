@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import PokemonList from "./pages/PokemonList/PokemonList";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Hello from './components/Hello';
-import PokemonPage from './pages/PokemonPage';
+import PokemonPage, {loaderPokemon} from './pages/PokemonPage';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/pokemon-list/:pokeid",
         element: <PokemonPage/>,
+        loader: loaderPokemon
       },
     ],
   },

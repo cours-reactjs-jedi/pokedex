@@ -1,23 +1,15 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import  axios from 'axios';
-import {  useParams } from 'react-router-dom'
+import {  useLoaderData } from 'react-router-dom'
+
+export async function loaderPokemon({params}) {
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${params.pokeid}`)
+    return {pokemon: res.data}
+} 
 
 function PokemonPage() {
-  const [pokemon, setPokemon] = useState(null)
-
-  const {pokeid} = useParams()
-
-  async function getData() {
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeid}`)
-    setPokemon(res.data)
-  }
-
-  useEffect(() => {
-    getData()
-  }, [])
-
-
+  const { pokemon } = useLoaderData();
 
   return (
     <>
