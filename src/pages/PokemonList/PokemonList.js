@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Pokemon from "../Pokemon";
-import Pagination from "../Pagination";
+import Pokemon from '../../components/Pokemon';
+import Pagination from '../../components/Pagination';
+import {Outlet} from "react-router-dom"
 
 function PokemonList({ searchTerm = "" }) {
   const [pokemonList, setPokemonList] = useState([]);
@@ -19,6 +20,7 @@ function PokemonList({ searchTerm = "" }) {
 
   return (
     <>
+    <Outlet/>
       <Pagination
         list={pokemonList.filter((pokemon) =>
           pokemon.name.includes(searchTerm)

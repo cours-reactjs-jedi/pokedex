@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import PokemonList from "./components/PokemonList";
+import PokemonList from "./pages/PokemonList";
 
 const App = () => {
 
